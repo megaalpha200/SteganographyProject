@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/navigation_encode"
+            android:icon="@drawable/ic_enhanced_encryption_black_24dp"
+            android:title="@string/title_encode"/>
+
+    <item
+            android:id="@+id/navigation_decode"
+            android:icon="@drawable/ic_no_encryption_black_24dp"
+            android:title="@string/title_decode"/>
+
+</menu>

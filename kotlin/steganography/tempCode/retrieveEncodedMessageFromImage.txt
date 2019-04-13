@@ -1,0 +1,32 @@
+fun retrieveEncodedMessageFromImage(picturePath: String) : String {
+    val encodedMessageStringBuilder = StringBuilder("")
+
+    val bufferedImg = ImageIO.read(File(picturePath))
+    val picWidth : Int = bufferedImg.width
+    val picHeight : Int = bufferedImg.height
+
+    for ((_, yIndex) in (0 until picHeight).withIndex()) {
+        for ((_, xIndex) in (0 until picWidth).withIndex()) {
+            val pixel = bufferedImg.raster.getPixel(xIndex, yIndex, IntArray(3))
+            val rgbBinCharArray = rgbToBinary(pixel[0], pixel[1], pixel[2]).toCharArray()
+
+            val fw = FileWriter(newImgRGB, true)
+            pixel.forEach { fw.write("$it ") }
+            fw.write(System.lineSeparator())
+            fw.close()
+
+            encodedMessageStringBuilder.append(rgbBinCharArray[rgbBinCharArray.lastIndex])
+
+            if (encodedMessageStringBuilder.length > 8) {
+                val lastEightBits = encodedMessageStringBuilder.substring(encodedMessageStringBuilder.lastIndex - 8, encodedMessageStringBuilder.lastIndex)
+
+                if (lastEightBits == "11111111") {
+                    encodedMessageStringBuilder.removeRange(encodedMessageStringBuilder.lastIndex - 8, encodedMessageStringBuilder.lastIndex)
+                    break
+                }
+            }
+        }
+    }
+
+    return retrieveNameFromBinary(encodedMessageStringBuilder.toString())
+}

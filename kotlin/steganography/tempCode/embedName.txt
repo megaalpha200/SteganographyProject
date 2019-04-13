@@ -1,0 +1,58 @@
+fun embedMessage(picturePath : String, name : String) : BufferedImage {
+    val originalBufferedImg : BufferedImage = ImageIO.read(File(picturePath))
+    val picWidth : Int = originalBufferedImg.width
+    val picHeight : Int = originalBufferedImg.height
+    val newBufferedImage = BufferedImage(picWidth, picHeight, originalBufferedImg.type)
+
+    val originalImgBinData : ArrayList<String> = arrayListOf()
+    val newImageBinData : ArrayList<String> = arrayListOf()
+    val binConvertedName : CharArray = convertMessageToBinary(name).toCharArray()
+
+    var count = 0
+    for ((_, yIndex) in (0 until picHeight).withIndex()) {
+        for ((_, xIndex) in (0 until picWidth).withIndex()) {
+            val pixel = originalBufferedImg.raster.getPixel(xIndex, yIndex, IntArray(3))
+            //val pixel = originalBufferedImg.getRGB(xIndex, yIndex)
+            val rgbBin = rgbToBinary(pixel[0], pixel[1], pixel[2])
+            originalImgBinData.add(rgbBin)
+
+            if (count < binConvertedName.size) {
+                val rgbBinCharArray = rgbBin.toCharArray()
+                rgbBinCharArray[rgbBinCharArray.lastIndex] = binConvertedName[count]
+
+                val newRgbBinStrBuilder = StringBuilder("")
+                rgbBinCharArray.forEach { newRgbBinStrBuilder.append(it) }
+                val newRgbBinStr = newRgbBinStrBuilder.toString()
+                val newRgbBinIntArray = binaryToRGB(newRgbBinStr)
+
+                val fw = FileWriter(originalImgEncodedRGB, true)
+                newRgbBinIntArray.forEach { fw.write("$it ") }
+                fw.write(System.lineSeparator())
+                fw.close()
+
+                newImageBinData.add(newRgbBinStr)
+                newBufferedImage.raster.setPixel(xIndex, yIndex, newRgbBinIntArray)
+                count++
+            }
+            if (count >= binConvertedName.size && count < binConvertedName.size + 8) {
+                val rgbBinCharArray = rgbBin.toCharArray()
+                rgbBinCharArray[rgbBinCharArray.lastIndex] = '1'
+
+                val newRgbBinStrBuilder = StringBuilder("")
+                rgbBinCharArray.forEach { newRgbBinStrBuilder.append(it) }
+                val newRgbBinStr = newRgbBinStrBuilder.toString()
+                val newRgbBinIntArray = binaryToRGB(newRgbBinStr)
+
+                newImageBinData.add(newRgbBinStr)
+                newBufferedImage.raster.setPixel(xIndex, yIndex, newRgbBinIntArray)
+                count++
+            }
+            else {
+                newImageBinData.add(rgbBin)
+                newBufferedImage.raster.setPixel(xIndex, yIndex, pixel)
+            }
+        }
+    }
+
+    return newBufferedImage
+}

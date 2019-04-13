@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Steganography</string>
+    <string name="title_encode">Encode</string>
+    <string name="title_decode">Decode</string>
+    <string name="encode_btn">Encode</string>
+    <string name="decode_btn">Decode</string>
+
+    <!--EditText Hints-->
+    <string name="message_to_encode_hint">Message to Encode…</string>
+    <string name="encode_image_name_hint">Name of image file…</string>
+    <string name="message_to_decode_hint">Tap below to find a photo to decode…</string>
+
+    <string name="decoding_failed_msg">Decoding failed!</string>
+</resources>
