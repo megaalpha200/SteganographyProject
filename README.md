@@ -1,4 +1,4 @@
-# Steganography Project
+# Steganography Project (Text in Picture)
 
 ### The project prompt is as follows:
 > Create a new picture by embedding the Binary representation of your last
