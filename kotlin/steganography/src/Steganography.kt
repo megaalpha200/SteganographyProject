@@ -31,7 +31,12 @@ class Steganography {
             return Pair(binaryNameArrayList, charBinMap)
         }
 
-        fun generateEncodedImage(image : BufferedImage, picturePath : String) = ImageIO.write(image, "png", File(picturePath))
+        fun generateEncodedImage(image : BufferedImage, picturePath : String) : String {
+            val picturePathFile = File(picturePath)
+
+            ImageIO.write(image, "png", picturePathFile)
+            return picturePathFile.absolutePath
+        }
 
         fun embedMessage(picture : BufferedImage, name : String) : BufferedImage {
             val originalBufferedImg : BufferedImage = picture
