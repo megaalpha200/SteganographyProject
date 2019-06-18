@@ -93,6 +93,8 @@ int main()
 			cv::destroyAllWindows();
 		}
 	} while (true);
+
+	return 0;
 }
 
 void encode()
