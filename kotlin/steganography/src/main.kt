@@ -38,6 +38,9 @@ fun main() {
             }
 
         }
+        catch (e: NoSuchFileException) {
+            println("Picture does not exist!")
+        }
         catch (e: NumberFormatException) {
             println("Please enter a number from 1 to 3!")
         }
@@ -56,6 +59,10 @@ fun encode() {
     print("Enter the location of the image: ")
     val originalPath = readLine()!!
     println()
+
+    if (!checkIfFileExists(originalPath))
+        throw NoSuchFileException(File(originalPath))
+
     print("Enter the location of the encoded image: ")
     val newPath = readLine()!!
     println()
@@ -70,7 +77,14 @@ fun decode() {
     print("Enter the location of the encoded image: ")
     val picPath = readLine()!!
 
+    if (!checkIfFileExists(picPath))
+        throw NoSuchFileException(File(picPath))
+
     println("The message is \"${retrieveEncodedMessageFromImage(picPath)}\"")
+}
+
+private fun checkIfFileExists(filename: String): Boolean {
+    return File(filename).exists()
 }
 
 private class WrongMenuChoiceException : Exception() {

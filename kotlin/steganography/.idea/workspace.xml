@@ -2,17 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99222120-1bcd-4ed6-a1e4-bfb1c32ab3f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../java/steganography/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../java/steganography/src/Steganography.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../java/steganography/steganography.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/steganography/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/steganography/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/steganography/debug.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/steganography/debug.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/steganography/out/production/steganography/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/steganography/out/production/steganography/Main$WrongMenuChoiceException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/steganography/out/production/steganography/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/steganography/out/production/steganography/Steganography.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/steganography/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/steganography/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/steganography/src/Steganography.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/steganography/src/Steganography.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.txt" beforeDir="false" afterPath="$PROJECT_DIR$/debug.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/steganography/META-INF/steganography.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/steganography/META-INF/steganography.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/steganography/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/steganography/MainKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/steganography/Steganography$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/steganography/Steganography$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/steganography/Steganography.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/steganography/Steganography.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Steganography.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steganography.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/steganography/META-INF/steganography.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/steganography/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/steganography/Steganography$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/steganography/Steganography.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/steganography/WrongMenuChoiceException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,11 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#207#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="650">
+              <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -87,6 +88,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -104,7 +106,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -217,17 +218,17 @@
       <workItem from="1551894146297" duration="44000" />
       <workItem from="1559666352857" duration="2478000" />
       <workItem from="1560176129166" duration="8522000" />
+      <workItem from="1560868450647" duration="690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97690000" />
+    <option name="totallyTimeSpent" value="98380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19417475" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.197411" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -289,11 +290,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#207#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="650">
+          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
         </state>
       </provider>
     </entry>

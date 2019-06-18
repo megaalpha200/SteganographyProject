@@ -5,4 +5,4 @@
 > name in above picture’s binary representation by using the LSB (Least Significant Bit) method.
 
 ### The project includes a _Kotlin/JVM_ version, an _Android app_ version, 
-### and a _Java_ version
+### a _Java_ version, and a _C++_ version.

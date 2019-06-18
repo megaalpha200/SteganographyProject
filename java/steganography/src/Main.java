@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.NoSuchFileException;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,6 +40,9 @@ public class Main {
                         throw new WrongMenuChoiceException();
                 }
             }
+            catch (NoSuchFileException e) {
+                System.out.println("Picture does not exist!");
+            }
             catch (NumberFormatException e) {
                 System.out.println("Please enter a number from 1 to 3!");
             }
@@ -51,7 +55,7 @@ public class Main {
         } while (true);
     }
 
-    private static void encode() throws IOException {
+    private static void encode() throws IOException, NoSuchFileException {
         final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.print("Enter your message: ");
@@ -60,6 +64,10 @@ public class Main {
         System.out.print("Enter the location of the image: ");
         final String originalPath = bufferedReader.readLine();
         System.out.println();
+
+        if (!checkIfFileExists(originalPath))
+            throw new NoSuchFileException(originalPath);
+
         System.out.print("Enter the location of the encoded image: ");
         final String newPath = bufferedReader.readLine();
         System.out.println();
@@ -70,13 +78,20 @@ public class Main {
         System.out.println("Image encoded successfully!");
     }
 
-    private static void decode() throws IOException {
+    private static void decode() throws IOException, NoSuchFileException {
         final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.print("Enter the location of the encoded image: ");
         final String picPath = bufferedReader.readLine();
 
+        if (!checkIfFileExists(picPath))
+            throw new NoSuchFileException(picPath);
+
         System.out.println("The message is \"" + Steganography.retrieveEncodedMessageFromImage(picPath) + "\"");
+    }
+
+    private static boolean checkIfFileExists(String filename) {
+        return new File(filename).exists();
     }
 
     private static class WrongMenuChoiceException extends Exception {

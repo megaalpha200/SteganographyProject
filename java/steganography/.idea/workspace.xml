@@ -2,17 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be402cdb-07a1-478c-bc6d-62f1152c202e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Steganography.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/steganography.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../kotlin/steganography/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.txt" beforeDir="false" afterPath="$PROJECT_DIR$/debug.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/steganography/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/steganography/Main$WrongMenuChoiceException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/steganography/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/steganography/Steganography.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Steganography.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steganography.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/debug.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/debug.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/META-INF/steganography.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/META-INF/steganography.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/MainKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/Steganography$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/Steganography$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/Steganography.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/Steganography.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/src/Steganography.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/src/Steganography.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/META-INF/steganography.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/Steganography$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/Steganography.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/WrongMenuChoiceException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/src/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/src/main.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,12 +31,12 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Steganography.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+            <state relative-caret-position="790">
+              <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,17 +44,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="85" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="85" />
+            <state relative-caret-position="483">
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2834#2835#0" expanded="true" />
-                <element signature="e#2866#2867#0" expanded="true" />
-                <element signature="e#3684#3685#0" expanded="true" />
-                <element signature="e#3759#3760#0" expanded="true" />
+                <element signature="e#3325#3326#0" expanded="true" />
+                <element signature="e#3375#3376#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,6 +125,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Steganography (Picture in Picture)/SteganographyPictureInPictureProject/SteganographyPictureInPictureProject/kotlin/steganography(pic_in_pic)" />
@@ -209,28 +212,22 @@
       <option name="presentableId" value="Default" />
       <updated>1560179142235</updated>
       <workItem from="1560179145619" duration="16412000" />
+      <workItem from="1560633948489" duration="10267000" />
+      <workItem from="1560868405378" duration="674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16412000" />
+    <option name="totallyTimeSpent" value="27353000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25809062" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32949308" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32949308" />
@@ -238,41 +235,46 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Flutter Inspector" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Flutter Outline" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32949308" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Flutter Inspector" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Flutter Outline" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Steganography.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="85" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="85" />
+        <state relative-caret-position="790">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2834#2835#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
-            <element signature="e#3684#3685#0" expanded="true" />
-            <element signature="e#3759#3760#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Steganography.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        <state relative-caret-position="483">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3325#3326#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
           </folding>
         </state>
       </provider>

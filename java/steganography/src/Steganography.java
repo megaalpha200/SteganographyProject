@@ -106,7 +106,7 @@ public class Steganography {
                     final String newRgbBinStr = newRgbBinStrBuilder.toString();
                     final int newPixel = Integer.parseUnsignedInt(newRgbBinStr, 2);
 
-                    outputStream.write((newRgbBinStr + " -> " + newRgbBinStrBuilder + separator).getBytes());
+                    outputStream.write((rgbBinStr + " -> " + newRgbBinStrBuilder + separator).getBytes());
 
                     newBufferedImg.setRGB(xIndex, yIndex, newPixel);
                     count++;
