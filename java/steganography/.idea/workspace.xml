@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be402cdb-07a1-478c-bc6d-62f1152c202e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.txt" beforeDir="false" afterPath="$PROJECT_DIR$/debug.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/steganography/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/steganography/Main$WrongMenuChoiceException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/steganography/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/steganography/Steganography.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Steganography.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steganography.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/META-INF/steganography.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/MainKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/Steganography$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/Steganography.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/out/production/steganography/WrongMenuChoiceException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/src/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/src/main.kt" afterDir="false" />
-    </list>
+    <list default="true" id="be402cdb-07a1-478c-bc6d-62f1152c202e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +18,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Steganography.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
+            <state relative-caret-position="1037">
               <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -47,12 +30,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="527">
+              <caret line="67" column="8" lean-forward="true" selection-start-line="67" selection-start-column="8" selection-end-line="68" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3325#3326#0" expanded="true" />
-                <element signature="e#3375#3376#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,8 +85,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -122,13 +101,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Steganography (Picture in Picture)/SteganographyPictureInPictureProject/SteganographyPictureInPictureProject/kotlin/steganography(pic_in_pic)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -214,16 +195,18 @@
       <workItem from="1560179145619" duration="16412000" />
       <workItem from="1560633948489" duration="10267000" />
       <workItem from="1560868405378" duration="674000" />
+      <workItem from="1560955653530" duration="432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27353000" />
+    <option name="totallyTimeSpent" value="27785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25809062" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26213592" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -259,7 +242,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Steganography.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
+        <state relative-caret-position="1037">
           <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -269,12 +252,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="527">
+          <caret line="67" column="8" lean-forward="true" selection-start-line="67" selection-start-column="8" selection-end-line="68" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3325#3326#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
           </folding>
         </state>
       </provider>
