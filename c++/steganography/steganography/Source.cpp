@@ -99,13 +99,13 @@ int main()
 
 void encode()
 {
-	string nameInput;
+	string msgInput;
 	string originalPath;
 	string newPath;
 	string encodedImgSaveLoc;
 
 	cout << "Enter your message: ";
-	getline(cin, nameInput);
+	getline(cin, msgInput);
 	cout << endl;
 	cout << "Enter the location of the image: ";
 	getline(cin, originalPath);
@@ -120,7 +120,7 @@ void encode()
 
 	Mat img = imread(originalPath);
 	Mat newImg;
-	embedMessage(img, nameInput, newImg);
+	embedMessage(img, msgInput, newImg);
 	encodedImgSaveLoc = generateEncodedImage(newImg, newPath);
 	cout << endl;
 	cout << "Encoded Image Saved At: " << encodedImgSaveLoc;
@@ -176,16 +176,16 @@ bool checkIfFileExists(string filename)
 	return fs::exists(filePath);
 }
 
-void convertMessageToBinary(vector<string> &binaryNameList, map<string, char> &charBinMap, string name)
+void convertMessageToBinary(vector<string> &binaryNameList, map<string, char> &charBinMap, string msg)
 {
-	cout << "Name: " << name << endl;
+	cout << "Message: " << msg << endl;
 	cout << "Binary Representation: " << endl;
 
-	for (int charIndex = 0; charIndex < name.length(); charIndex++)
+	for (int charIndex = 0; charIndex < msg.length(); charIndex++)
 	{
-		string currCharBinRepresentation = bitset<8>(name[charIndex]).to_string();
+		string currCharBinRepresentation = bitset<8>(msg[charIndex]).to_string();
 		cout << currCharBinRepresentation << " ";
-		charBinMap.insert(pair<string, char>(currCharBinRepresentation, name[charIndex]));
+		charBinMap.insert(pair<string, char>(currCharBinRepresentation, msg[charIndex]));
 		binaryNameList.push_back(currCharBinRepresentation);
 	}
 
@@ -194,7 +194,7 @@ void convertMessageToBinary(vector<string> &binaryNameList, map<string, char> &c
 	return;
 }
 
-void embedMessage(Mat &originalImg, string name, Mat &newImg)
+void embedMessage(Mat &originalImg, string msg, Mat &newImg)
 {
 	int picHeight = originalImg.rows;
 	int picWidth = originalImg.cols;
@@ -202,12 +202,12 @@ void embedMessage(Mat &originalImg, string name, Mat &newImg)
 	newImg = Mat(picHeight, picWidth, CV_8UC3, Scalar(0, 0, 255));
 
 	vector<string> binaryConvertedNameList = vector<string>();
-	map<string, char> binConvertedNameCharBinMap = map<string, char>();
-	convertMessageToBinary(binaryConvertedNameList, binConvertedNameCharBinMap, name);
+	map<string, char> binConvertedMsgCharBinMap = map<string, char>();
+	convertMessageToBinary(binaryConvertedNameList, binConvertedMsgCharBinMap, msg);
 
 	ofstream outputStream = ofstream("debug.txt");
 
-	outputStream << "Message: " << name << endl;
+	outputStream << "Message: " << msg << endl;
 	outputStream << "Binary Representation: " << endl;
 
 	string binConvertedNameString = "";
@@ -242,7 +242,7 @@ void embedMessage(Mat &originalImg, string name, Mat &newImg)
 				{
 					string currLetterBin = binaryConvertedNameList[currLetterIndex];
 					char *currLetter = new char[2];
-					currLetter[0] = binConvertedNameCharBinMap[currLetterBin];
+					currLetter[0] = binConvertedMsgCharBinMap[currLetterBin];
 					currLetter[1] = NULL;
 
 					string tempCurrLetterBinStr = currLetterBin;

@@ -12,14 +12,14 @@ class Steganography {
     companion object {
         private const val delimiter = "11111110"
 
-        private fun convertMessageToBinary(name : String) : Pair<ArrayList<String>, Map<String, Char>> {
+        private fun convertMessageToBinary(msg : String) : Pair<ArrayList<String>, Map<String, Char>> {
             val binaryNameArrayList = arrayListOf<String>()
             val charBinMap = mutableMapOf<String, Char>()
 
-            println("Message: $name")
+            println("Message: $msg")
             print("Binary Representation: ")
 
-            name.forEach {
+            msg.forEach {
                 val currCharBinRepresentation = String.format("%08d", Integer.toBinaryString(it.toInt()).toInt())
                 print("$currCharBinRepresentation ")
                 charBinMap[currCharBinRepresentation] = it
@@ -38,25 +38,25 @@ class Steganography {
             return picturePathFile.absolutePath
         }
 
-        fun embedMessage(picture : BufferedImage, name : String) : BufferedImage {
+        fun embedMessage(picture : BufferedImage, msg : String) : BufferedImage {
             val originalBufferedImg : BufferedImage = picture
             val picWidth : Int = originalBufferedImg.width
             val picHeight : Int = originalBufferedImg.height
             val newBufferedImage = BufferedImage(picWidth, picHeight, originalBufferedImg.type)
 
-            val convertMessageToBinaryResult = convertMessageToBinary(name)
-            val binConvertedNameArrayList = convertMessageToBinaryResult.first
+            val convertMessageToBinaryResult = convertMessageToBinary(msg)
+            val binConvertedMsgArrayList = convertMessageToBinaryResult.first
             val binConvertedNameCharBinMap = convertMessageToBinaryResult.second
 
             val separator = System.lineSeparator()
             val file = File(".\\debug.txt")
             val outputStream = FileOutputStream(file)
 
-            outputStream.write("Message: $name$separator$separator".toByteArray())
+            outputStream.write("Message: $msg$separator$separator".toByteArray())
             outputStream.write("Binary Representation:$separator".toByteArray())
 
             val binConvertedNameStringBuilder = StringBuilder("")
-            binConvertedNameArrayList.forEach {
+            binConvertedMsgArrayList.forEach {
                 binConvertedNameStringBuilder.append(it)
                 outputStream.write("$it ".toByteArray())
             }
@@ -78,8 +78,8 @@ class Steganography {
                         val currLetterIndex = count / 8
                         val currBitIndex = count % 8
 
-                        if (currLetterIndex < binConvertedNameArrayList.size) {
-                            val currLetterBin = binConvertedNameArrayList[currLetterIndex]
+                        if (currLetterIndex < binConvertedMsgArrayList.size) {
+                            val currLetterBin = binConvertedMsgArrayList[currLetterIndex]
                             val currLetter = binConvertedNameCharBinMap[currLetterBin]
 
                             val currLetterBinStrBuilder = StringBuilder(currLetterBin)

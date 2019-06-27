@@ -54,7 +54,7 @@ fun main() {
 
 fun encode() {
     print("Enter your message: ")
-    val nameInput = readLine()!!
+    val msgInput = readLine()!!
     println()
     print("Enter the location of the image: ")
     val originalPath = readLine()!!
@@ -67,7 +67,7 @@ fun encode() {
     val newPath = readLine()!!
     println()
 
-    val encodedImgSaveLoc = generateEncodedImage(embedMessage(ImageIO.read(File(originalPath)), nameInput), newPath)
+    val encodedImgSaveLoc = generateEncodedImage(embedMessage(ImageIO.read(File(originalPath)), msgInput), newPath)
     println()
     println("Encoded Image Saved At: $encodedImgSaveLoc")
     println("Image encoded successfully!")
