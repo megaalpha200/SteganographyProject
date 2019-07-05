@@ -29,7 +29,7 @@ function newImg = embedMessage(originalImg, msg)
             
             fprintf(fileID, 'Pixel (x:%d, y:%d): \n', [xIndex, yIndex]);
             
-            %Get current mesage bit and assign it to the least significant
+            %Get current message bit and assign it to the least significant
             %bit of the blue pixel for newImg
             currRow = floor(count/8)+1; %Represents current letter msg
             currCol = floor(mod(count, 8)+1); %Represents current bit in the current letter

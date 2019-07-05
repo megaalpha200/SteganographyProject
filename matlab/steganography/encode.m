@@ -1,5 +1,5 @@
 % Encode Function
-% The function takes a asks the user to enter a string message, the location 
+% The function asks the user to enter a string message, the location 
 % of the image they want to encode (as a string), and the location of the new 
 % encoded image (as a string). Finally, the function writes the new image into 
 % a file.

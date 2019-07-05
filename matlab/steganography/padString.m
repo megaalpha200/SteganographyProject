@@ -17,8 +17,9 @@ function paddedStr = padString( str, character, limit, direction )
         elseif (direction == 1)
             tempStr(1:cSize) = str; %Right Padding
         end
+    else
+        tempStr = str;
     end
 
     paddedStr = tempStr;
 end
-
