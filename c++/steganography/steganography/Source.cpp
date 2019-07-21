@@ -3,11 +3,14 @@
 #include <bitset>
 #include <vector>
 #include <fstream>
+#include <sstream>
 #include <exception>
 #include <experimental/filesystem>
 #include <opencv2/opencv.hpp>
 #include <filesystem>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
 using namespace cv;
 namespace fs = std::experimental::filesystem;
 
@@ -123,7 +126,7 @@ void encode()
 	embedMessage(img, msgInput, newImg);
 	encodedImgSaveLoc = generateEncodedImage(newImg, newPath);
 	cout << endl;
-	cout << "Encoded Image Saved At: " << encodedImgSaveLoc;
+	cout << "Encoded Image Saved At: " << encodedImgSaveLoc << endl;
 	cout << "Image encoded successfully!";
 
 	namedWindow("Original_Image", WINDOW_NORMAL);
@@ -161,6 +164,10 @@ string generateEncodedImage(Mat& image, string picturePath)
 	compression_params.push_back(0);*/
 
 	imwrite(pngPath, image);
+
+	if (checkIfFileExists(picturePath))
+		remove(picturePath.c_str());
+
 	rename(pngPath.c_str(), picturePath.c_str());
 
 	return full;
@@ -196,16 +203,20 @@ void convertMessageToBinary(vector<string> &binaryNameList, map<string, char> &c
 
 void embedMessage(Mat &originalImg, string msg, Mat &newImg)
 {
+	milliseconds startTime = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+
+	ofstream outputStream = ofstream("debug.txt");
+
 	int picHeight = originalImg.rows;
 	int picWidth = originalImg.cols;
 
-	newImg = Mat(picHeight, picWidth, CV_8UC3, Scalar(0, 0, 255));
+	newImg = Mat(originalImg);
 
 	vector<string> binaryConvertedNameList = vector<string>();
 	map<string, char> binConvertedMsgCharBinMap = map<string, char>();
 	convertMessageToBinary(binaryConvertedNameList, binConvertedMsgCharBinMap, msg);
 
-	ofstream outputStream = ofstream("debug.txt");
+	
 
 	outputStream << "Message: " << msg << endl;
 	outputStream << "Binary Representation: " << endl;
@@ -226,15 +237,16 @@ void embedMessage(Mat &originalImg, string msg, Mat &newImg)
 	{
 		for (int yIndex = 0; yIndex < picWidth; yIndex++)
 		{
-			Vec3b pixel = originalImg.at<Vec3b>(xIndex, yIndex);
+			Vec3b pixel = newImg.at<Vec3b>(xIndex, yIndex);
 			string pixelBlue = bitset<8>(pixel[0]).to_string();
 			string pixelGreen = bitset<8>(pixel[1]).to_string();
 			string pixelRed = bitset<8>(pixel[2]).to_string();
 			string rgbBinStr = pixelRed + pixelGreen + pixelBlue;
-			outputStream << "Pixel (x:" << xIndex << ", y:" << yIndex << "): " << endl;
 
 			if (count < binConvertedNameString.length())
 			{
+				outputStream << "Pixel (x:" << to_string(xIndex) << ", y:" << to_string(yIndex) << "): " << endl;
+
 				int currLetterIndex = count / 8;
 				int currBitIndex = count % 8;
 
@@ -283,14 +295,21 @@ void embedMessage(Mat &originalImg, string msg, Mat &newImg)
 			}
 			else
 			{
-				newImg.at<Vec3b>(xIndex, yIndex) = pixel;
-				outputStream << "NO ENCODING" << endl << rgbBinStr << endl;
+				/*newImg.at<Vec3b>(xIndex, yIndex) = pixel;
+				outputStream << "NO ENCODING" << endl << rgbBinStr << endl;*/
+				goto outer;
 			}
 
 			outputStream << endl;
 		}
 	}
 
+outer:
+	milliseconds endTime = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+	double timeDiff = (endTime.count() - startTime.count()) / 1000.0;
+	cout << "\nEncoding Time: " << to_string(timeDiff) << " secs\n\n";
+
+	outputStream.flush();
 	outputStream.close();
 	return;
 
@@ -298,6 +317,8 @@ void embedMessage(Mat &originalImg, string msg, Mat &newImg)
 
 string retrieveEncodedMessageFromImage(string picturePath)
 {
+	milliseconds startTime = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+
 	Mat encodedImg = imread(picturePath);
 	int picHeight = encodedImg.rows;
 	int picWidth = encodedImg.cols;
@@ -341,7 +362,11 @@ string retrieveEncodedMessageFromImage(string picturePath)
 		}
 	}
 
-	outer:
+outer:
+
+	milliseconds endTime = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+	double timeDiff = (endTime.count() - startTime.count()) / 1000.0;
+	cout << "\nDecoding Time: " << to_string(timeDiff) << " secs\n\n";
 
 	return encodedMessageString;
 }

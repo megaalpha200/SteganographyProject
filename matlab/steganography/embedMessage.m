@@ -4,16 +4,20 @@
 % which represents the new encoded image.
 
 function newImg = embedMessage(originalImg, msg)
+    startDateTime = datetime('now', 'Format', 'dd-MM-yyyy HH:mm:ss.SSS');
+    
+    fileID = fopen('debug.txt', 'wt');
+
     [picHeight, picWidth, ~] = size(originalImg); %Get the img height and width
     newImg = originalImg; %Copy the original image to a new instance
     [~, msgSize] = size(msg); %Get length of msg
     
-    fileID = fopen('debug.txt', 'wt');
-    
     %Convert msg into binary and append the delimiter
-    binConvertedMsgList = vertcat(convertMessageToBinary(msg, fileID), getDelimiter());
+    [binConvertedMsgList, convertMessToBinDispStr] = convertMessageToBinary(msg);
+    binConvertedMsgList = vertcat(binConvertedMsgList, getDelimiter());
     
-    fprintf(fileID, '\nImage in Binary...\n');
+    fprintf(fileID, convertMessToBinDispStr);
+    fprintf(fileID, 'Image in Binary...\n\n');
     
     innerLoopBroken = false; %Flag used to break out of both for loops
     count = 0; %Counter for each bit in the message
@@ -66,5 +70,12 @@ function newImg = embedMessage(originalImg, msg)
             break;
         end
     end
+    
     fclose(fileID);
+    
+    endDateTime = datetime('now', 'Format', 'dd-MM-yyyy HH:mm:ss.SSS');
+    td = endDateTime - startDateTime;
+    td.Format = 's';
+    td = char(td);
+    fprintf('\nEncoding Time: %s\n\n', td);
 end

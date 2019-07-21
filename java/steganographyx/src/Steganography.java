@@ -3,6 +3,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,10 +38,12 @@ public class Steganography {
     }
 
     public static BufferedImage embedMessage(BufferedImage picture, String msg) throws FileNotFoundException, IOException {
+        Date startTime = new Date();
+
         final BufferedImage originalBufferedImg = picture;
         final int picWidth = originalBufferedImg.getWidth();
         final int picHeight = originalBufferedImg.getHeight();
-        final BufferedImage newBufferedImg = new BufferedImage(picWidth, picHeight, originalBufferedImg.getType());
+        final BufferedImage newBufferedImg = new BufferedImage(originalBufferedImg.getColorModel(), originalBufferedImg.getRaster(), originalBufferedImg.isAlphaPremultiplied(), null);
 
         final Pair<ArrayList<String>, Map<String, Character>> convertMessageToBinaryResult = convertMessageToBinary(msg);
         final ArrayList<String> binConvertedNameArrayList = convertMessageToBinaryResult.getKey();
@@ -50,29 +53,26 @@ public class Steganography {
         final File file = new File(".\\debug.txt");
         final FileOutputStream outputStream = new FileOutputStream(file);
 
-        outputStream.write(("Message: " + msg + separator + separator).getBytes());
+        outputStream.write(("Message: " + msg + separator+ separator).getBytes());
         outputStream.write(("Binary Representation: " + separator).getBytes());
 
-        final StringBuilder binConvertedMsgStringBuilder = new StringBuilder();
-        for (String it : binConvertedNameArrayList) {
-            binConvertedMsgStringBuilder.append(it);
-            outputStream.write((it + " ").getBytes());
-        }
-        binConvertedMsgStringBuilder.append(delimiter);
+        final String binConvertedMsgString = String.join("", binConvertedNameArrayList) + delimiter;
+        outputStream.write(String.join(" ", binConvertedNameArrayList).getBytes());
 
-        final char[] binConvertedNameCharArray = binConvertedMsgStringBuilder.toString().toCharArray();
+        final char[] binConvertedNameCharArray = binConvertedMsgString.toCharArray();
 
         outputStream.write((separator + separator).getBytes());
         outputStream.write(("Image in Binary..." + separator).getBytes());
 
         int count = 0;
-        for (int yIndex = 0; yIndex < picHeight; yIndex++) {
+        outer: for (int yIndex = 0; yIndex < picHeight; yIndex++) {
             for (int xIndex = 0; xIndex < picWidth; xIndex++) {
                 final int pixel = originalBufferedImg.getRGB(xIndex, yIndex);
                 final String rgbBinStr = Integer.toBinaryString(pixel);
-                outputStream.write(("Pixel (x:" + xIndex + ", y:" + yIndex + "): " + separator).getBytes());
 
                 if (count < binConvertedNameCharArray.length) {
+                    outputStream.write(("Pixel (x:"+ xIndex + ", y:" + yIndex+ "): "+ separator).getBytes());
+
                     final int currLetterIndex = count / 8;
                     final int currBitIndex = count % 8;
 
@@ -99,21 +99,18 @@ public class Steganography {
                     final char[] rgbBinCharArray = rgbBinStr.toCharArray();
                     rgbBinCharArray[rgbBinCharArray.length - 1] = binConvertedNameCharArray[count];
 
-                    final StringBuilder newRgbBinStrBuilder = new StringBuilder();
-                    for (char c : rgbBinCharArray) {
-                        newRgbBinStrBuilder.append(c);
-                    }
-                    final String newRgbBinStr = newRgbBinStrBuilder.toString();
+                    final String newRgbBinStr = new String(rgbBinCharArray);
                     final int newPixel = Integer.parseUnsignedInt(newRgbBinStr, 2);
 
-                    outputStream.write((rgbBinStr + " -> " + newRgbBinStrBuilder + separator).getBytes());
+                    outputStream.write((rgbBinStr + " -> " + newRgbBinStr + separator).getBytes());
 
                     newBufferedImg.setRGB(xIndex, yIndex, newPixel);
                     count++;
                 }
                 else {
-                    newBufferedImg.setRGB(xIndex, yIndex, pixel);
-                    outputStream.write(("NO ENCODING" + separator + rgbBinStr + separator).getBytes());
+                    /*newBufferedImg.setRGB(xIndex, yIndex, pixel);
+                    outputStream.write("NO ENCODING").append(separator).append(rgbBinStr).append(separator);*/
+                    break outer;
                 }
 
                 outputStream.write(separator.getBytes());
@@ -122,11 +119,17 @@ public class Steganography {
 
         outputStream.flush();
         outputStream.close();
+        
+        Date endTime = new Date();
+        double timeDiff = (endTime.getTime() - startTime.getTime()) / 1000.0;
+        System.out.println("\nEncoding Time: " + timeDiff +" secs\n\n");
 
         return newBufferedImg;
     }
 
     public static String retrieveEncodedMessageFromImage(String picturePath) throws IOException {
+        Date startTime = new Date();
+
         final BufferedImage bufferedImg = ImageIO.read(new File(picturePath));
         final int picWidth = bufferedImg.getWidth();
         final int picHeight = bufferedImg.getHeight();
@@ -161,6 +164,10 @@ public class Steganography {
                 }
             }
         }
+
+        Date endTime = new Date();
+        double timeDiff = (endTime.getTime() - startTime.getTime()) / 1000.0;
+        System.out.println("\nDecoding Time: " + timeDiff +" secs\n\n");
 
         return encodedMessageStringBuilder.toString();
     }

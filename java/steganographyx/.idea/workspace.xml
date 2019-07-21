@@ -3,9 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="be402cdb-07a1-478c-bc6d-62f1152c202e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../c++/steganography/steganography/Source.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../c++/steganography/steganography/Source.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++/steganography/steganography/debug.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++/steganography/steganography/new.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++/steganography/steganography/steganography.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../c++/steganography/steganography/steganography.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../steganography/classes/Steganography.class" beforeDir="false" afterPath="$PROJECT_DIR$/../steganography/classes/Steganography.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../steganography/classes/debug.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../steganography/classes/new.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../steganography/src/Steganography.java" beforeDir="false" afterPath="$PROJECT_DIR$/../steganography/src/Steganography.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../steganography/steganography.jcu" beforeDir="false" afterPath="$PROJECT_DIR$/../steganography/steganography.jcu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../steganography/steganography.jcw" beforeDir="false" afterPath="$PROJECT_DIR$/../steganography/steganography.jcw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Steganography.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steganography.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/debug.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/new.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/src/Steganography.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/src/Steganography.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/steganography/convertMessageToBinary.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/steganography/convertMessageToBinary.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/steganography/debug.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/steganography/embedMessage.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/steganography/embedMessage.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/steganography/new.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../matlab/steganography/retrieveEncodedMessageFromImage.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/steganography/retrieveEncodedMessageFromImage.m" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Steganography.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1169">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="173">
+              <caret line="87" column="134" selection-start-line="87" selection-start-column="134" selection-end-line="87" selection-end-column="134" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="1037">
               <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -56,7 +75,14 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>char</find>
+      <find>outputStream.write</find>
+      <find>.getBytes()</find>
+      <find>fileOutputStringBuilder.append</find>
     </findStrings>
+    <replaceStrings>
+      <replace>fileOutputStringBuilder.append</replace>
+      <replace>outputStream.write</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -79,42 +105,21 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-18" />
-    <option name="y" value="-10" />
-    <option name="width" value="1296" />
-    <option name="height" value="788" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="steganography" type="b2602c69:ProjectViewProjectNode" />
-              <item name="steganography" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="steganography" type="b2602c69:ProjectViewProjectNode" />
-              <item name="steganography" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../kotlin/steganography" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -202,23 +207,28 @@
       <workItem from="1560868405378" duration="674000" />
       <workItem from="1560955653530" duration="432000" />
       <workItem from="1561416636026" duration="772000" />
+      <workItem from="1562952887283" duration="704000" />
+      <workItem from="1563305198563" duration="2282000" />
+      <workItem from="1563466809225" duration="554000" />
+      <workItem from="1563468852967" duration="524000" />
+      <workItem from="1563469422963" duration="694000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28557000" />
+    <option name="totallyTimeSpent" value="33315000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26618123" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.37666667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32949308" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39976957" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -245,20 +255,20 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Steganography.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+        <state relative-caret-position="173">
+          <caret line="87" column="134" selection-start-line="87" selection-start-column="134" selection-end-line="87" selection-end-column="134" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Steganography.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1169">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="1037">
+          <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

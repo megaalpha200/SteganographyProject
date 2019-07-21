@@ -4,11 +4,12 @@
 % The function takes a string message and returns a vector of binary strings 
 % of each character.
 
-function binaryMsgList = convertMessageToBinary(msg, fileID)
+function [binaryMsgList, dispStr] = convertMessageToBinary(msg)
     disp(['Message: ' msg]);
     disp('Binary Representation: ');
-    fprintf(fileID, ['Message: ' msg '\n']);
-    fprintf(fileID, 'Binary Representation: \n');
+    dispStr = '';
+    dispStr = horzcat(dispStr, sprintf('%s\n', ['Message: ' msg]));
+    dispStr = horzcat(dispStr, sprintf('%s\n', 'Binary Representation: '));
     
     msgAsNums = double(msg);
     binaryMsgList = dec2bin(msgAsNums);
@@ -18,9 +19,9 @@ function binaryMsgList = convertMessageToBinary(msg, fileID)
     %Display each char from msg and its binary represenation
     for x = 1:rSize
         disp([msg(x) '| ' num2str(binaryMsgList(x, :))]);
-        fprintf(fileID, [msg(x) '| ' num2str(binaryMsgList(x, :)) '\n']);
+        dispStr = horzcat(dispStr, sprintf('%s\n', [msg(x) '| ' num2str(binaryMsgList(x, :))]));
     end
     
     fprintf('\n');
-    fprintf(fileID, '\n');
+    dispStr = horzcat(dispStr, sprintf('\n'));
 end

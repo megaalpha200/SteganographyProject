@@ -6,7 +6,9 @@ import java.awt.image.BufferedImage
 import java.io.File
 import java.io.FileOutputStream
 import java.lang.StringBuilder
+import java.util.*
 import javax.imageio.ImageIO
+import kotlin.collections.ArrayList
 
 class Steganography {
     companion object {
@@ -39,10 +41,12 @@ class Steganography {
         }
 
         fun embedMessage(picture : BufferedImage, msg : String) : BufferedImage {
+            val startTime = Date()
+
             val originalBufferedImg : BufferedImage = picture
             val picWidth : Int = originalBufferedImg.width
             val picHeight : Int = originalBufferedImg.height
-            val newBufferedImage = BufferedImage(picWidth, picHeight, originalBufferedImg.type)
+            val newBufferedImage = BufferedImage(picture.colorModel, picture.raster, picture.isAlphaPremultiplied, null)
 
             val convertMessageToBinaryResult = convertMessageToBinary(msg)
             val binConvertedMsgArrayList = convertMessageToBinaryResult.first
@@ -55,26 +59,23 @@ class Steganography {
             outputStream.write("Message: $msg$separator$separator".toByteArray())
             outputStream.write("Binary Representation:$separator".toByteArray())
 
-            val binConvertedNameStringBuilder = StringBuilder("")
-            binConvertedMsgArrayList.forEach {
-                binConvertedNameStringBuilder.append(it)
-                outputStream.write("$it ".toByteArray())
-            }
-            binConvertedNameStringBuilder.append(delimiter)
+            val binConvertedNameString = binConvertedMsgArrayList.joinToString("") + delimiter
+            outputStream.write(binConvertedMsgArrayList.joinToString(" ").toByteArray())
 
-            val binConvertedNameCharArray = binConvertedNameStringBuilder.toString().toCharArray()
+            val binConvertedNameCharArray = binConvertedNameString.toCharArray()
 
             outputStream.write("$separator$separator".toByteArray())
             outputStream.write("Image in Binary...$separator".toByteArray())
 
             var count = 0
-            for (yIndex in (0 until picHeight)) {
+            outer@ for (yIndex in (0 until picHeight)) {
                 for (xIndex in (0 until picWidth)) {
                     val pixel = originalBufferedImg.getRGB(xIndex, yIndex)
                     val rgbBinStr = Integer.toBinaryString(pixel)
-                    outputStream.write("Pixel (x:$xIndex, y:$yIndex): $separator".toByteArray())
 
                     if (count < binConvertedNameCharArray.size) {
+                        outputStream.write("Pixel (x:$xIndex, y:$yIndex): $separator".toByteArray())
+
                         val currLetterIndex = count / 8
                         val currBitIndex = count % 8
 
@@ -102,19 +103,18 @@ class Steganography {
                         val rgbBinCharArray = rgbBinStr.toCharArray()
                         rgbBinCharArray[rgbBinCharArray.lastIndex] = binConvertedNameCharArray[count]
 
-                        val newRgbBinStrBuilder = StringBuilder("")
-                        rgbBinCharArray.forEach { newRgbBinStrBuilder.append(it) }
-                        val newRgbBinStr = newRgbBinStrBuilder.toString()
+                        val newRgbBinStr = rgbBinCharArray.joinToString("")
                         val newPixel = Integer.parseUnsignedInt(newRgbBinStr, 2)
 
-                        outputStream.write("$rgbBinStr -> $newRgbBinStrBuilder$separator".toByteArray())
+                        outputStream.write("$rgbBinStr -> $newRgbBinStr$separator".toByteArray())
 
                         newBufferedImage.setRGB(xIndex, yIndex, newPixel)
                         count++
                     }
                     else {
-                        newBufferedImage.setRGB(xIndex, yIndex, pixel)
-                        outputStream.write("NO ENCODING$separator$rgbBinStr$separator".toByteArray())
+                        /*newBufferedImage.setRGB(xIndex, yIndex, pixel)
+                        outputStream.write("NO ENCODING$separator$rgbBinStr$separator")*/
+                        break@outer
                     }
 
                     outputStream.write(separator.toByteArray())
@@ -123,11 +123,17 @@ class Steganography {
 
             outputStream.flush()
             outputStream.close()
+            
+            val endTime = Date()
+            val timeDiff = (endTime.time - startTime.time) / 1000.0
+            println("\nEncoding Time: $timeDiff secs\n\n")
 
             return newBufferedImage
         }
 
         fun retrieveEncodedMessageFromImage(picturePath: String) : String {
+            val startTime = Date()
+
             val bufferedImg : BufferedImage = ImageIO.read(File(picturePath))
             val picWidth : Int = bufferedImg.width
             val picHeight : Int = bufferedImg.height
@@ -162,6 +168,10 @@ class Steganography {
                     }
                 }
             }
+
+            val endTime = Date()
+            val timeDiff = (endTime.time - startTime.time) / 1000.0
+            println("\nDecoding Time: $timeDiff secs\n\n")
 
             return encodedMessageStringBuilder.toString()
         }

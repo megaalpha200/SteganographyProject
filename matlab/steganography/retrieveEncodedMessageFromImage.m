@@ -3,6 +3,8 @@
 % a string which is the encoded message
 
 function encodedMessage = retrieveEncodedMessageFromImage(encodedImg)
+    startDateTime = datetime('now', 'Format', 'dd-MM-yyyy HH:mm:ss.SSS');
+
     [picHeight, picWidth, ~] = size(encodedImg); %Get the img height and width
     
     tempCharBin = '';
@@ -40,4 +42,10 @@ function encodedMessage = retrieveEncodedMessageFromImage(encodedImg)
             break;
         end
     end
+    
+    endDateTime = datetime('now', 'Format', 'dd-MM-yyyy HH:mm:ss.SSS');
+    td = endDateTime - startDateTime;
+    td.Format = 's';
+    td = char(td);
+    fprintf('\nDecoding Time: %s\n\n', td);
 end
