@@ -75,7 +75,8 @@ function newImg = embedMessage(originalImg, msg)
     
     endDateTime = datetime('now', 'Format', 'dd-MM-yyyy HH:mm:ss.SSS');
     td = endDateTime - startDateTime;
-    td.Format = 's';
-    td = char(td);
-    fprintf('\nEncoding Time: %s\n\n', td);
+    td.Format= 'hh:mm:ss.SSSSS';
+    td = milliseconds(td);
+    td = num2str(td);
+    fprintf('\nEncoding Time: %s milliseconds\n\n', td);
 end

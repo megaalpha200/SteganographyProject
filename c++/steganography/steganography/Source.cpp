@@ -306,8 +306,8 @@ void embedMessage(Mat &originalImg, string msg, Mat &newImg)
 
 outer:
 	milliseconds endTime = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
-	double timeDiff = (endTime.count() - startTime.count()) / 1000.0;
-	cout << "\nEncoding Time: " << to_string(timeDiff) << " secs\n\n";
+	double timeDiff = (endTime.count() - startTime.count()) + 0.0;
+	cout << "\nEncoding Time: " << to_string(timeDiff) << " milliseconds\n\n";
 
 	outputStream.flush();
 	outputStream.close();
@@ -365,8 +365,8 @@ string retrieveEncodedMessageFromImage(string picturePath)
 outer:
 
 	milliseconds endTime = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
-	double timeDiff = (endTime.count() - startTime.count()) / 1000.0;
-	cout << "\nDecoding Time: " << to_string(timeDiff) << " secs\n\n";
+	double timeDiff = (endTime.count() - startTime.count()) + 0.0;
+	cout << "\nDecoding Time: " << to_string(timeDiff) << " milliseconds\n\n";
 
 	return encodedMessageString;
 }

@@ -3,27 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="be402cdb-07a1-478c-bc6d-62f1152c202e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../c++/steganography/steganography/Source.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../c++/steganography/steganography/Source.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../c++/steganography/steganography/debug.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../c++/steganography/steganography/new.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../c++/steganography/steganography/steganography.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../c++/steganography/steganography/steganography.vcxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../steganography/classes/Steganography.class" beforeDir="false" afterPath="$PROJECT_DIR$/../steganography/classes/Steganography.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../steganography/classes/debug.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../steganography/classes/new.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../steganography/src/Steganography.java" beforeDir="false" afterPath="$PROJECT_DIR$/../steganography/src/Steganography.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../steganography/steganography.jcu" beforeDir="false" afterPath="$PROJECT_DIR$/../steganography/steganography.jcu" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../steganography/steganography.jcw" beforeDir="false" afterPath="$PROJECT_DIR$/../steganography/steganography.jcw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/new.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Steganography.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steganography.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/debug.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/new.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../kotlin/steganography/src/Steganography.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../kotlin/steganography/src/Steganography.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/steganography/convertMessageToBinary.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/steganography/convertMessageToBinary.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/steganography/debug.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../matlab/steganography/embedMessage.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/steganography/embedMessage.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../matlab/steganography/new.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../matlab/steganography/retrieveEncodedMessageFromImage.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../matlab/steganography/retrieveEncodedMessageFromImage.m" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Steganography.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="87" column="134" selection-start-line="87" selection-start-column="134" selection-end-line="87" selection-end-column="134" />
+            <state relative-caret-position="292">
+              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,7 +41,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
+            <state relative-caret-position="952">
               <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -212,11 +199,12 @@
       <workItem from="1563466809225" duration="554000" />
       <workItem from="1563468852967" duration="524000" />
       <workItem from="1563469422963" duration="694000" />
+      <workItem from="1563980303676" duration="322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33315000" />
+    <option name="totallyTimeSpent" value="33637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -257,8 +245,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Steganography.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="87" column="134" selection-start-line="87" selection-start-column="134" selection-end-line="87" selection-end-column="134" />
+        <state relative-caret-position="292">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -267,7 +255,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
+        <state relative-caret-position="952">
           <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />

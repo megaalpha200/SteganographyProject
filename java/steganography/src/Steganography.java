@@ -119,10 +119,10 @@ public class Steganography {
 
         outputStream.flush();
         outputStream.close();
-        
+
         Date endTime = new Date();
-        double timeDiff = (endTime.getTime() - startTime.getTime()) / 1000.0;
-        System.out.println("\nEncoding Time: " + timeDiff +" secs\n\n");
+        double timeDiff = (endTime.getTime() - startTime.getTime()) + 0.0;
+        System.out.println("\nEncoding Time: " + timeDiff +" milliseconds\n\n");
 
         return newBufferedImg;
     }
@@ -166,8 +166,8 @@ public class Steganography {
         }
 
         Date endTime = new Date();
-        double timeDiff = (endTime.getTime() - startTime.getTime()) / 1000.0;
-        System.out.println("\nDecoding Time: " + timeDiff +" secs\n\n");
+        double timeDiff = (endTime.getTime() - startTime.getTime()) + 0.0;
+        System.out.println("\nDecoding Time: " + timeDiff +" milliseconds\n\n");
 
         return encodedMessageStringBuilder.toString();
     }
